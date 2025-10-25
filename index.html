@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS Smith - Sustainable Packaging Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #0056b3;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .login-btn {
+            background: #ffd700;
+            color: #0056b3;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #ffed4a;
+            transform: translateY(-2px);
+        }
+
+        .user-info {
+            display: none;
+            align-items: center;
+            gap: 15px;
+            color: white;
+        }
+
+        .welcome-text {
+            font-weight: 500;
+        }
+
+        .logout-btn {
+            background: #dc3545;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #c82333;
+        }
+
+        /* Hero Section - With Original Image */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Add overlay for better text readability */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #0056b3;
+        }
+
+        .btn-primary:hover {
+            background: #ffed4a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #0056b3;
+        }
+
+        /* Sustainability Section */
+        .sustainability {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #0056b3;
+        }
+
+        .sustainability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .sustainability-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .sustainability-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sustainability-icon {
+            width: 80px;
+            height: 80px;
+            background: #0056b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .sustainability-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+
+        /* About Us Section - Initially Hidden */
+        .about-section {
+            padding: 80px 0;
+            background: white;
+            display: none;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .offering-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .offering-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .offering-card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .offering-card p {
+            line-height: 1.7;
+        }
+
+        /* Services Section - Initially Hidden */
+        .services-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+            display: none;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .services-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .service-category {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-category h3 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .service-category h3 i {
+            color: #ffd700;
+            font-size: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li i {
+            color: #28a745;
+            font-size: 0.9rem;
+        }
+
+        .view-offering {
+            display: inline-block;
+            background: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .view-offering:hover {
+            background: #004494;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .contact-card h4 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .contact-card p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .more-info-btn {
+            background: #ffd700;
+            color: #0056b3;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .more-info-btn:hover {
+            background: #ffed4a;
+        }
+
+        /* More Info Modal */
+        .more-info-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .more-info-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .more-info-content h3 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+        }
+
+        .more-info-content h4 {
+            color: #0056b3;
+            margin: 25px 0 15px 0;
+            font-size: 1.3rem;
+        }
+
+        .more-info-content p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .more-info-content ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .more-info-content li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .close-more-info {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .close-more-info:hover {
+            background: #c82333;
+        }
+
+        .info-highlight {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0056b3;
+            margin: 20px 0;
+        }
+
+        .info-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0056b3;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Close Buttons */
+        .close-about-btn, .close-services-btn, .close-sustainability-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: block;
+            margin: 40px auto 0;
+            transition: background 0.3s;
+        }
+
+        .close-about-btn:hover, .close-services-btn:hover, .close-sustainability-btn:hover {
+            background: #c82333;
+        }
+
+        /* Products Section (After Login) */
+        .products-section {
+            display: none;
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 200px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        /* Login Modal */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            max-width: 90%;
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0056b3;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #0056b3;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #0056b3;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #004494;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-btn:hover {
+            color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background: #003366;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: #ffd700;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #ffd700;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #0056b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #ffd700;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #0056b3;
+            color: #bdc3c7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+                text-align: center;
+            }
+
+            .user-info {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .offering-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-text">DS SMITH</div>
+            </div>
+            <nav class="nav-links">
+                <a href="#" onclick="hideAllSections()">Home</a>
+                <a href="#" onclick="showServicesSection()">Services</a>
+                <a href="#" onclick="showSustainabilitySection()">Sustainability</a>
+                <a href="#" onclick="showAboutSection()">About Us</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <div class="user-info" id="userInfo">
+                    <span class="welcome-text">Welcome, Admin!</span>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Log Out
+                    </button>
+                </div>
+                <button class="login-btn" id="loginButton" onclick="openLogin()">Client Login</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Original Image -->
+    <section class="hero" id="heroSection">
+        <div class="hero-content">
+            <h1>Sustainable Packaging Solutions</h1>
+            <p>Leading the way in renewable, recyclable packaging that protects your products and our planet</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openLogin()">Access Products</button>
+                <a href="#" class="btn btn-secondary" onclick="showServicesSection()">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section - Initially Hidden -->
+    <section class="about-section" id="aboutSection">
+        <div class="about-container">
+            <h2 class="section-title">About DS Smith & International Paper</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Building a Stronger Global Company</h2>
+                    <p>International Paper and DS Smith, two of the leading producers of sustainable packaging and other fiber-based products, combined in January 2025 to create a truly global leader in sustainable packaging solutions.</p>
+                    <p>Together with International Paper, we are the global leader in sustainable packaging. Headquartered in Memphis, Tennessee, USA and London, England, we employ more than 65,000 colleagues with manufacturing operations in North America and Europe, Middle East and Africa (EMEA). Together with our customers, we make the world safer and more productive, one sustainable packaging solution at a time.</p>
+                    <p>DS Smith was founded in the 1940s as a box-making business in East London, United Kingdom. Since then, the we have expanded to provide full solutions including recycling and paper making, becoming a leading sustainable packaging supplier in Europe. Today, we have operations in more than 30 countries.</p>
+                    <p>International Paper was established in 1898 as a paper and pulp company in the northeastern part of the United States, combining several small businesses. Over the last 125 years, the company has transformed itself multiple times, diversifying and re-focusing, ultimately evolving into a leading global packaging supplier.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=700&fit=crop" alt="DS Smith and International Paper">
+                </div>
+            </div>
+
+            <div class="about-text">
+                <h2>Our Circular Business Model</h2>
+                <p>One of our greatest opportunities is to engage our customers on the circular economy, helping some of the world's leading brands to reach their sustainability goals.</p>
+                <p>We are recognised around the world for our innovation and for the quality of our packaging. Our products can improve transport and storage efficiency, boost retail presentation and increase product sales for our customers. We are designing out waste and pollution through circular design and helping our customers to replace one billion pieces of plastic with sustainable alternatives. We also play an active role in our local communities and are equipping our people to lead the transition to a circular economy.</p>
+                <p>It takes two weeks for paper fibre to move around our operations. What does this journey look like? Our Box to Box in 14 Days video follows the fibre on its journey around the DS Smith Supply Cycle.</p>
+            </div>
+
+            <h2 class="section-title">Our Offering</h2>
+            <div class="offering-grid">
+                <div class="offering-card">
+                    <h3>Packaging Solutions</h3>
+                    <p>We are a leading international sustainable packaging company, with innovative packaging solutions made from recycled and/or recyclable material. We deliver innovative, fully fibre based corrugated products across Europe and North America for consumer products, e-commerce, promotion, transit and industrial packaging. We complement our product range with consultancy on supply chain optimisation and creative design.</p>
+                </div>
+                <div class="offering-card">
+                    <h3>Paper Products</h3>
+                    <p>We are a leading international manufacturer of corrugated case material (CCM), which is the paper used for conversion into corrugated board. We also manufacture specialist paper grades such as plasterboard liner. We operate 13 CCM paper mills, 11 in Europe and two in the US. Of those, two are kraftliner mills (virgin paper – one in the US, one in Europe) and the remainder are principally dedicated to the production of recycled CCM (testliner). We also have two small mills in Europe producing specialist paper grades.</p>
+                </div>
+                <div class="offering-card">
+                    <h3>Recycling Services</h3>
+                    <p>We provide a full recycling and waste management service. We are Europe's largest cardboard and paper recycler and are also one of the leading full service recycling and waste management companies in Europe. We collect quality paper and cardboard for recycling from a range of sectors which provides cost efficient raw material for the Group's recycled papermaking processes. We also sell used fibre to third parties globally.</p>
+                </div>
+            </div>
+            
+            <button class="close-about-btn" onclick="hideAboutSection()">
+                <i class="fas fa-times"></i> Close About Us
+            </button>
+        </div>
+    </section>
+
+    <!-- Services Section - Initially Hidden -->
+    <section class="services-section" id="servicesSection">
+        <div class="services-container">
+            <h2 class="section-title">Products & Services</h2>
+            <div class="services-intro">
+                We provide sustainable packaging solutions and take pride in making a positive impact on the environment with our range of integrated recycling and waste management solutions.
+            </div>
+
+            <div class="services-grid">
+                <!-- Packaging Solutions -->
+                <div class="service-category">
+                    <h3><i class="fas fa-box"></i> Packaging solutions</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Retail Packaging</li>
+                        <li><i class="fas fa-check"></i> Industrial Packaging</li>
+                        <li><i class="fas fa-check"></i> E-commerce</li>
+                    </ul>
+                    <a href="#" class="view-offering">View our full packaging offering</a>
+                </div>
+
+                <!-- Paper Products -->
+                <div class="service-category">
+                    <h3><i class="fas fa-scroll"></i> Paper products</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Brown liners</li>
+                        <li><i class="fas fa-check"></i> White liners</li>
+                        <li><i class="fas fa-check"></i> Kraftliners</li>
+                        <li><i class="fas fa-check"></i> Our paper mills</li>
+                    </ul>
+                    <a href="#" class="view-offering">View our full paper offering</a>
+                </div>
+
+                <!-- Recycling Services -->
+                <div class="service-category">
+                    <h3><i class="fas fa-recycle"></i> Recycling services</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Cardboard Recycling</li>
+                        <li><i class="fas fa-check"></i> Paper Recycling</li>
+                        <li><i class="fas fa-check"></i> Retail Recycling</li>
+                        <li><i class="fas fa-check"></i> Closed loop recycling</li>
+                    </ul>
+                    <a href="#" class="view-offering">View our full recycling offering</a>
+                </div>
+            </div>
+
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <h4>Contact - Packaging Solutions</h4>
+                    <p>Get in touch for more information about our solutions.</p>
+                    <button class="more-info-btn" onclick="showMoreInfo('packaging')">More Info</button>
+                </div>
+                <div class="contact-card">
+                    <h4>Contact - Recycling Services</h4>
+                    <p>Get in touch for more information about recycling and waste management services.</p>
+                    <button class="more-info-btn" onclick="showMoreInfo('recycling')">More Info</button>
+                </div>
+                <div class="contact-card">
+                    <h4>Contact - Paper products</h4>
+                    <p>Get in touch for more information about our containerboard and paper products.</p>
+                    <button class="more-info-btn" onclick="showMoreInfo('paper')">More Info</button>
+                </div>
+            </div>
+
+            <button class="close-services-btn" onclick="hideServicesSection()">
+                <i class="fas fa-times"></i> Close Services
+            </button>
+        </div>
+    </section>
+
+    <!-- Sustainability Section - Initially Hidden -->
+    <section class="sustainability" id="sustainabilitySection" style="display: none;">
+        <div class="about-container">
+            <h2 class="section-title">Our Sustainable Commitment</h2>
+            
+            <div class="about-text">
+                <p>At DS Smith, sustainability is at the heart of everything we do. We're committed to leading the transition to a circular economy through innovative packaging solutions that protect products, reduce waste, and preserve our planet for future generations.</p>
+            </div>
+
+            <div class="sustainability-grid">
+                <div class="sustainability-card">
+                    <div class="sustainability-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Circular Economy</h3>
+                    <p>Creating packaging that can be recycled again and again</p>
+                </div>
+                <div class="sustainability-card">
+                    <div class="sustainability-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Renewable Materials</h3>
+                    <p>Using paper-based materials from sustainable sources</p>
+                </div>
+                <div class="sustainability-card">
+                    <div class="sustainability-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Developing cutting-edge packaging solutions</p>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <h2>Our Circular Business Model</h2>
+                <p>One of our greatest opportunities is to engage our customers on the circular economy, helping some of the world's leading brands to reach their sustainability goals.</p>
+                <p>We are recognised around the world for our innovation and for the quality of our packaging. Our products can improve transport and storage efficiency, boost retail presentation and increase product sales for our customers. We are designing out waste and pollution through circular design and helping our customers to replace one billion pieces of plastic with sustainable alternatives. We also play an active role in our local communities and are equipping our people to lead the transition to a circular economy.</p>
+                <p>It takes two weeks for paper fibre to move around our operations. What does this journey look like? Our Box to Box in 14 Days video follows the fibre on its journey around the DS Smith Supply Cycle.</p>
+            </div>
+
+            <div class="about-text">
+                <h2>Environmental Impact & Goals</h2>
+                <p><strong>6.5M+ tons of CO₂ saved annually</strong> through our recycling operations</p>
+                <p><strong>1B+ plastic pieces replaced</strong> with sustainable alternatives</p>
+                <p><strong>100% of packaging reusable or recyclable</strong> supporting circular economy</p>
+                <p><strong>14-day box-to-box recycling cycle</strong> from collection to new packaging</p>
+            </div>
+
+            <div class="about-text">
+                <h2>2025 Sustainability Targets</h2>
+                <p>• Reduce CO₂ emissions by 30% per ton of product</p>
+                <p>• Achieve 100% reusable or recyclable packaging</p>
+                <p>• Replace 1 billion pieces of problem plastic</p>
+                <p>• Reduce water usage by 25% in water-stressed areas</p>
+                <p>• Maintain 100% certified or recycled fiber content</p>
+            </div>
+            
+            <button class="close-sustainability-btn" onclick="hideSustainabilitySection()">
+                <i class="fas fa-times"></i> Close Sustainability
+            </button>
+        </div>
+    </section>
+
+    <!-- More Info Modal -->
+    <div class="more-info-modal" id="moreInfoModal">
+        <div class="more-info-content">
+            <button class="close-more-info" onclick="closeMoreInfo()">&times;</button>
+            <div id="moreInfoContent">
+                <!-- Content will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-form">
+            <button class="close-btn" onclick="closeLogin()">&times;</button>
+            <h2>Client Login</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px; color: #666;">
+                Demo: admin / password123
+            </p>
+        </div>
+    </div>
+
+    <!-- Products Section (Shows after login) -->
+    <section class="products-section" id="productsSection">
+        <h2 class="section-title">Our Product Catalog - 20 Products</h2>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here after login -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> DS Smith Headquarters</li>
+                    <li><i class="fas fa-phone"></i> +45 12 34 56 78</li>
+                    <li><i class="fas fa-envelope"></i> info@dssmith.com</li>
+                </ul>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="#" onclick="showServicesSection()">Packaging Solutions</a></li>
+                    <li><a href="#" onclick="showServicesSection()">Paper Products</a></li>
+                    <li><a href="#" onclick="showServicesSection()">Recycling Services</a></li>
+                    <li><a href="#">Display Packaging</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Sustainability</h3>
+                <ul>
+                    <li><a href="#" onclick="showSustainabilitySection()">Our Strategy</a></li>
+                    <li><a href="#" onclick="showSustainabilitySection()">Circular Economy</a></li>
+                    <li><a href="#" onclick="showSustainabilitySection()">Climate Action</a></li>
+                    <li><a href="#" onclick="showSustainabilitySection()">Reports</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#" onclick="showAboutSection()">About DS Smith</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 DS Smith Packaging. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Login Credentials
+        const validUsername = "admin";
+        const validPassword = "password123";
+
+        // 20 Products Data with Unique Images
+        const products = [
+            { 
+               name: "Corrugated Boxes", 
+               price: "140 kr", 
+               image: "https://5.imimg.com/data5/SELLER/Default/2021/9/LQ/OW/BI/10440220/corrugated-colored-packaging-box-500x500.jpg" 
+            },
+            { 
+               name: "Shipping Cartons", 
+               price: "110 kr", 
+               image: "https://img3.s3wfg.com/web/img/images_uploaded/2/d/dl-ds-smith-paper-pulp-packaging-production-plant-factory-logo-ftse-100-min_620x350.jpg" 
+            },
+           { 
+                name: "Cardboard Packaging", 
+                price: "86 kr", 
+                image: "https://www.biopack.be/media/catalog/category/Biopack-Amerikaansedozen-CMS_pagina_s_Website_-_Banner_small.jpg" 
+            },
+            { 
+                name: "E-commerce Boxes", 
+                price: "75 kr", 
+                image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=300&fit=crop" 
+            },
+            { 
+                name: "Display Packaging", 
+                price: "110 kr", 
+                image: "https://www.packagingblue.com/content/images/upload_images/display-boxes-1.webp" 
+            },
+            { 
+                name: "Industrial Crates",  
+                price: "110 kr", 
+                image: "https://www.thunderbirdplastics.com/wp-content/uploads/2019/10/UTILITY-CASES-16L-24L-1.jpg" 
+            },
+            { 
+                name: "Sustainable Wrap",  
+                price: "110 kr", 
+                image: "https://1.bp.blogspot.com/-rRxe1rcaXLk/XfFwz0t8DVI/AAAAAAAAL9A/_zY4OBET1CE_vQAJVwXbnLr4ye9VPnEggCLcBGAsYHQ/s1600/zero-waste-gift-wrapping-1-brown-paper.jpg" 
+            },
+            { 
+                name: "Custom Packaging", 
+                price: "190 kr", 
+               image: "https://packagingbox.pk/wp-content/uploads/2024/12/Eco-Friendly-Custom-Packaging-Boxes-2-1024x576.webp" 
+            },
+            { 
+                name: "Premium Gift Boxes", 
+                price: "199 kr", 
+                image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=300&fit=crop" 
+            },
+            { 
+                name: "Food Packaging", 
+                price: "65 kr", 
+                image: "https://www.royalpress.co.th/wp-content/uploads/2022/12/recycled-plastic-cups-and-food-containers.jpeg" 
+            },
+            { 
+                name: "Pharma Packaging", 
+                price: "110 kr", 
+                image: "https://www.designerpeople.com/wp-content/uploads/2025/06/36-3.webp" 
+            },
+            { 
+                name: "beverage cartons ", 
+                price: "100 kr", 
+                image: "https://d3hjf51r9j54j7.cloudfront.net/wp-content/uploads/sites/7/2019/11/image.jpg" 
+            },
+            { 
+                name: "Cosmetic Packaging", 
+                price: "175 kr", 
+                image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=400&h=300&fit=crop" 
+            },
+            { 
+                name: "Electronic Packaging", 
+                price: "225 kr", 
+                image: "https://www.zenpack.us/wp-content/smush-webp/2022/03/consumer_electronic_07.jpg.webp" 
+            },
+            { 
+                name: "Recycled Packaging", 
+                price: "95 kr", 
+                image: "https://www.banyannation.com/wp-content/uploads/2025/05/Recyclable-Packaging.jpg" 
+            },
+            { 
+                name: "Bulk Packaging",  
+                price: "350 kr", 
+                image: "https://cms.paramountglobal.com/wp-content/uploads/2024/11/Bulk-Packing-PG-Warehouse_0bebfef15b820b859ef42ef7bba93f9a.jpg" 
+            },
+            { 
+                name: "Eco-Friendly Bags", 
+                price: "55 kr", 
+                image: "https://www.greengiving.eu/storage/_thumbs/500x400/Sfeerfoto's/Jute-tassen(1).jpg" 
+            },
+            { 
+                name: "Protective Packaging", 
+                price: "125 kr", 
+                image: "https://www.hub-packaging.com/wp-content/uploads/2022/10/pexels-rodnae-productions-7464407.jpg" 
+            },
+            { 
+                name: "Retail Display Boxes",
+                price: "180 kr", 
+                image: "https://holacustomboxes.com/storage/images/11111111.jpg" 
+            },
+            { 
+                name: "Shipping Envelopes", 
+                price: "40 kr", 
+                image: "https://m.media-amazon.com/images/I/61XsNOuAe5L._UF894,1000_QL80_.jpg" 
+            }
+        ];
+
+        // More Info Content Data
+        const moreInfoData = {
+            packaging: `
+                <h3>Packaging Solutions - Complete Information</h3>
+                
+                <div class="info-highlight">
+                    <p>DS Smith offers comprehensive packaging solutions designed to meet the diverse needs of modern businesses while maintaining our commitment to sustainability and circular economy principles.</p>
+                </div>
+
+                <h4>📦 Retail Packaging Solutions</h4>
+                <p>Our retail packaging solutions are designed to enhance product visibility, protect goods during transit, and create memorable unboxing experiences for consumers. We specialize in:</p>
+                <ul>
+                    <li><strong>Custom Display Packaging:</strong> Eye-catching designs that drive sales and brand recognition</li>
+                    <li><strong>Premium Gift Boxes:</strong> Luxury packaging for high-end products and special occasions</li>
+                    <li><strong>Point-of-Sale Displays:</strong> Innovative solutions that capture customer attention in retail environments</li>
+                    <li><strong>Sustainable Retail Solutions:</strong> Eco-friendly packaging that aligns with your brand's environmental values</li>
+                </ul>
+
+                <h4>🏭 Industrial Packaging Solutions</h4>
+                <p>For industrial applications, we provide robust, reliable packaging that ensures product safety and optimizes supply chain efficiency:</p>
+                <ul>
+                    <li><strong>Heavy-Duty Corrugated Boxes:</strong> Designed to withstand rigorous handling and transportation</li>
+                    <li><strong>Bulk Packaging Systems:</strong> Cost-effective solutions for large-volume shipments</li>
+                    <li><strong>Custom Protective Packaging:</strong> Tailored solutions for fragile or high-value industrial products</li>
+                    <li><strong>Automated Packaging Lines:</strong> Integration with your existing manufacturing processes</li>
+                </ul>
+
+                <h4>🛒 E-commerce Packaging Solutions</h4>
+                <p>Specialized packaging designed specifically for the unique demands of online retail:</p>
+                <ul>
+                    <li><strong>Right-Sized Packaging:</strong> Optimized box sizes to reduce material usage and shipping costs</li>
+                    <li><strong>Branded E-commerce Boxes:</strong> Custom printing that reinforces brand identity</li>
+                    <li><strong>Returns-Friendly Packaging:</strong> Easy-to-open and reusable packaging for simplified returns</li>
+                    <li><strong>Automated Packing Solutions:</strong> Integration with e-commerce fulfillment systems</li>
+                </ul>
+
+                <div class="info-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Countries Served</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">65,000+</span>
+                        <span class="stat-label">Employees Worldwide</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1B+</span>
+                        <span class="stat-label">Plastic Pieces Replaced</span>
+                    </div>
+                </div>
+
+                <h4>🌱 Sustainability Commitment</h4>
+                <p>All our packaging solutions are designed with circular economy principles. We ensure that 100% of our packaging is reusable or recyclable, and we're committed to replacing problematic plastics with sustainable fiber-based alternatives.</p>
+
+                <p><strong>Contact our packaging specialists today to discuss how we can create the perfect packaging solution for your business needs while supporting your sustainability goals.</strong></p>
+            `,
+
+            recycling: `
+                <h3>Recycling Services - Complete Information</h3>
+                
+                <div class="info-highlight">
+                    <p>As Europe's largest cardboard and paper recycler, DS Smith provides comprehensive recycling and waste management services that complete the circular economy loop for sustainable packaging.</p>
+                </div>
+
+                <h4>📦 Cardboard Recycling Services</h4>
+                <p>Our cardboard recycling services are designed to handle volumes of all sizes, from small businesses to large industrial operations:</p>
+                <ul>
+                    <li><strong>Collection Services:</strong> Regular scheduled collections tailored to your production volume</li>
+                    <li><strong>Baling & Processing:</strong> On-site or off-site baling services to optimize transportation</li>
+                    <li><strong>Quality Sorting:</strong> Advanced sorting technology to ensure high-quality recycled material</li>
+                    <li><strong>Certification & Reporting:</strong> Detailed recycling reports for your sustainability documentation</li>
+                </ul>
+
+                <h4>📄 Paper Recycling Solutions</h4>
+                <p>Comprehensive paper recycling services for various paper grades and applications:</p>
+                <ul>
+                    <li><strong>Office Paper Recycling:</strong> Secure collection and processing of confidential documents</li>
+                    <li><strong>Industrial Paper Waste:</strong> Solutions for manufacturing and production paper waste</li>
+                    <li><strong>Specialty Paper Grades:</strong> Handling of coated, laminated, and specialty papers</li>
+                    <li><strong>Closed-Loop Systems:</strong> Direct return of recycled fiber to our paper mills</li>
+                </ul>
+
+                <h4>🏪 Retail Recycling Programs</h4>
+                <p>Tailored recycling solutions for the retail sector, addressing unique challenges and opportunities:</p>
+                <ul>
+                    <li><strong>Back-of-Store Recycling:</strong> Efficient systems for retail packaging waste management</li>
+                    <li><strong>Consumer Education:</strong> Support materials to encourage customer recycling participation</li>
+                    <li><strong>Supply Chain Integration:</strong> Coordinated recycling across retail distribution networks</li>
+                    <li><strong>Sustainability Reporting:</strong> Comprehensive metrics for corporate sustainability goals</li>
+                </ul>
+
+                <h4>🔄 Closed Loop Recycling Systems</h4>
+                <p>Our innovative closed-loop systems ensure that materials are continuously recycled and reused:</p>
+                <ul>
+                    <li><strong>Box-to-Box in 14 Days:</strong> Our fiber can be collected, recycled, and made into new packaging in just two weeks</li>
+                    <li><strong>Direct Mill Integration:</strong> Recycled materials go directly to our paper mills for reprocessing</li>
+                    <li><strong>Quality Control:</strong> Rigorous testing to maintain fiber quality through multiple recycling cycles</li>
+                    <li><strong>Traceability Systems:</strong> Complete tracking of materials through the recycling process</li>
+                </ul>
+
+                <div class="info-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">6M+</span>
+                        <span class="stat-label">Tons Recycled Annually</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">14</span>
+                        <span class="stat-label">Days Recycling Cycle</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Recyclable Packaging</span>
+                    </div>
+                </div>
+
+                <h4>🌍 Environmental Impact</h4>
+                <p>Our recycling services prevent valuable materials from going to landfill, reduce the need for virgin materials, and significantly lower carbon emissions. By choosing DS Smith recycling services, you're contributing to a genuine circular economy.</p>
+
+                <p><strong>Contact our recycling specialists to develop a customized waste management solution that meets your sustainability targets and operational requirements.</strong></p>
+            `,
+
+            paper: `
+                <h3>Paper Products - Complete Information</h3>
+                
+                <div class="info-highlight">
+                    <p>DS Smith is a leading international manufacturer of corrugated case materials and specialty paper grades, operating 13 paper mills across Europe and North America with a focus on sustainable production.</p>
+                </div>
+
+                <h4>📜 Brown Liners (Testliner)</h4>
+                <p>Our brown liners, also known as testliner, are produced from 100% recycled fiber and offer excellent performance characteristics:</p>
+                <ul>
+                    <li><strong>High Strength Grades:</strong> Ranging from standard to heavy-duty applications</li>
+                    <li><strong>Consistent Quality:</strong> Uniform caliper and smooth surface for optimal printing</li>
+                    <li><strong>Moisture Resistance:</strong> Enhanced performance in various environmental conditions</li>
+                    <li><strong>Cost-Effective Solutions:</strong> Competitive pricing without compromising quality</li>
+                    <li><strong>Custom Formulations:</strong> Tailored to specific customer requirements and applications</li>
+                </ul>
+
+                <h4>⚪ White Liners</h4>
+                <p>Premium white top liners designed for high-quality graphic presentation and brand enhancement:</p>
+                <ul>
+                    <li><strong>Brilliant Whiteness:</strong> Superior brightness for exceptional print results</li>
+                    <li><strong>Smooth Surface:</strong> Optimal for high-resolution printing and coating applications</li>
+                    <li><strong>Recycled Content:</strong> Sustainable production with high recycled fiber content</li>
+                    <li><strong>Grade Variations:</strong> Multiple whiteness levels and coating options available</li>
+                    <li><strong>Brand Consistency:</strong> Uniform color and quality across production runs</li>
+                </ul>
+
+                <h4>🌲 Kraftliners (Virgin Fiber)</h4>
+                <p>High-performance kraftliners manufactured from virgin fiber for applications requiring maximum strength:</p>
+                <ul>
+                    <li><strong>Exceptional Strength:</strong> Superior tear resistance and burst strength properties</li>
+                    <li><strong>Virgin Fiber Benefits:</strong> Long fibers providing enhanced durability and performance</li>
+                    <li><strong>Moisture Resilience:</strong> Excellent performance in humid or wet conditions</li>
+                    <li><strong>Food Grade Options:</strong> Certified for direct food contact applications</li>
+                    <li><strong>Sustainable Sourcing:</strong> Responsibly sourced from certified sustainable forests</li>
+                </ul>
+
+                <h4>🏭 Our Paper Mills Network</h4>
+                <p>With 13 strategically located paper mills, we ensure reliable supply and consistent quality:</p>
+                <ul>
+                    <li><strong>European Operations:</strong> 11 mills across key European markets</li>
+                    <li><strong>North American Presence:</strong> 2 state-of-the-art mills in the United States</li>
+                    <li><strong>Production Capacity:</strong> Combined annual capacity of over 3 million tons</li>
+                    <li><strong>Energy Efficiency:</strong> Advanced technologies reducing environmental impact</li>
+                    <li><strong>Quality Assurance:</strong> Stringent quality control at every production stage</li>
+                </ul>
+
+                <h4>🔬 Specialty Paper Grades</h4>
+                <p>Beyond standard containerboard, we produce specialized paper products for unique applications:</p>
+                <ul>
+                    <li><strong>Plasterboard Liner:</strong> Specialized papers for construction industry applications</li>
+                    <li><strong>Technical Papers:</strong> Custom formulations for industrial and technical uses</li>
+                    <li><strong>Coated Variants:</strong> Enhanced surface properties for specific performance requirements</li>
+                    <li><strong>Barrier Papers:</strong> Functional papers with moisture or grease resistance</li>
+                </ul>
+
+                <div class="info-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">13</span>
+                        <span class="stat-label">Paper Mills</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3M+</span>
+                        <span class="stat-label">Tons Annual Capacity</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Recycled Fiber Usage</span>
+                    </div>
+                </div>
+
+                <h4>🌱 Sustainable Paper Production</h4>
+                <p>Our paper production processes prioritize environmental responsibility through energy efficiency, water conservation, and maximum utilization of recycled fibers. We're committed to reducing our carbon footprint while delivering high-quality paper products.</p>
+
+                <p><strong>Contact our paper products team to discuss your specific requirements and discover how our comprehensive paper portfolio can support your packaging and manufacturing needs.</strong></p>
+            `
+        };
+
+        // Check if user is already logged in
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                showUserInfo();
+                loadProducts();
+            }
+        }
+
+        // Show About Us Section
+        function showAboutSection() {
+            // Hide other sections
+            document.getElementById('heroSection').style.display = 'none';
+            document.getElementById('sustainabilitySection').style.display = 'none';
+            document.getElementById('productsSection').style.display = 'none';
+            document.getElementById('servicesSection').style.display = 'none';
+            
+            // Show About Us section
+            document.getElementById('aboutSection').style.display = 'block';
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Hide About Us Section
+        function hideAboutSection() {
+            document.getElementById('aboutSection').style.display = 'none';
+            document.getElementById('heroSection').style.display = 'block';
+            document.getElementById('sustainabilitySection').style.display = 'block';
+            
+            // Show products section if user is logged in
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                document.getElementById('productsSection').style.display = 'block';
+            }
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show Services Section
+        function showServicesSection() {
+            // Hide other sections
+            document.getElementById('heroSection').style.display = 'none';
+            document.getElementById('sustainabilitySection').style.display = 'none';
+            document.getElementById('productsSection').style.display = 'none';
+            document.getElementById('aboutSection').style.display = 'none';
+            
+            // Show Services section
+            document.getElementById('servicesSection').style.display = 'block';
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Hide Services Section
+        function hideServicesSection() {
+            document.getElementById('servicesSection').style.display = 'none';
+            document.getElementById('heroSection').style.display = 'block';
+            document.getElementById('sustainabilitySection').style.display = 'block';
+            
+            // Show products section if user is logged in
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                document.getElementById('productsSection').style.display = 'block';
+            }
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show Sustainability Section
+        function showSustainabilitySection() {
+            // Hide other sections
+            document.getElementById('heroSection').style.display = 'none';
+            document.getElementById('productsSection').style.display = 'none';
+            document.getElementById('aboutSection').style.display = 'none';
+            document.getElementById('servicesSection').style.display = 'none';
+            
+            // Show Sustainability section
+            document.getElementById('sustainabilitySection').style.display = 'block';
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Hide Sustainability Section
+        function hideSustainabilitySection() {
+            document.getElementById('sustainabilitySection').style.display = 'none';
+            document.getElementById('heroSection').style.display = 'block';
+            
+            // Show products section if user is logged in
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                document.getElementById('productsSection').style.display = 'block';
+            }
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Hide all sections (for Home navigation)
+        function hideAllSections() {
+            document.getElementById('aboutSection').style.display = 'none';
+            document.getElementById('servicesSection').style.display = 'none';
+            document.getElementById('sustainabilitySection').style.display = 'none';
+            document.getElementById('heroSection').style.display = 'block';
+            
+            // Show products section if user is logged in
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                document.getElementById('productsSection').style.display = 'block';
+            }
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // More Info Functions
+        function showMoreInfo(type) {
+            document.getElementById('moreInfoContent').innerHTML = moreInfoData[type];
+            document.getElementById('moreInfoModal').style.display = 'flex';
+        }
+
+        function closeMoreInfo() {
+            document.getElementById('moreInfoModal').style.display = 'none';
+        }
+
+        // Login Functions
+        function openLogin() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        function closeLogin() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === validUsername && password === validPassword) {
+                // Successful login
+                localStorage.setItem('isLoggedIn', 'true');
+                showUserInfo();
+                loadProducts();
+                closeLogin();
+                alert('Welcome! You now have access to our full product catalog.');
+                
+                // Scroll to products
+                document.getElementById('productsSection').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                alert('Invalid username or password! Try: admin / password123');
+            }
+        }
+
+        function showUserInfo() {
+            document.getElementById('userInfo').style.display = 'flex';
+            document.getElementById('loginButton').style.display = 'none';
+            document.getElementById('productsSection').style.display = 'block';
+        }
+
+        function logout() {
+            localStorage.setItem('isLoggedIn', 'false');
+            document.getElementById('userInfo').style.display = 'none';
+            document.getElementById('loginButton').style.display = 'block';
+            document.getElementById('productsSection').style.display = 'none';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            alert('You have been logged out successfully.');
+        }
+
+        function loadProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+
+            products.forEach(product => {
+                const productCard = `
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <div class="product-price">${product.price}</div>
+                            <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="contactSales('${product.name}')">
+                                Contact Sales
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productsGrid.innerHTML += productCard;
+            });
+        }
+
+        function contactSales(productName) {
+            alert(`Thank you for your interest in ${productName}! Our sales team will contact you shortly.`);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('loginModal');
+            const moreInfoModal = document.getElementById('moreInfoModal');
+            
+            if (event.target === modal) {
+                closeLogin();
+            }
+            if (event.target === moreInfoModal) {
+                closeMoreInfo();
+            }
+        }
+
+        // Check login status when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginStatus();
+        });
+
+        console.log('DS Smith Packaging website loaded successfully!');
+    </script>
+</body>
+</html>
